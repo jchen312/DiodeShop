@@ -11,8 +11,13 @@ Worked on Graphics and GUI elements such as text and buttons.
 Work on Exception handling
 
 To do: 
+
 Multidimensional Arrays to store data of the Diodes
+
 Overloading
+
 Enhanced for loop potentially
+
 Collections?
+
 Sorting (few examples in textbook)
