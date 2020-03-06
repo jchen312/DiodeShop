@@ -4,16 +4,15 @@ This app will be created to help users purchase custom diodes. It will sell diod
 
 ## Pictures
 
-![alt text][logo]
-
-
-
-![alt text][home]
-
-
-
-[logo]: https://github.com/jchen312/ArduinoBluetoothApp/blob/master/images/Graphic.png
-[home]: https://github.com/jchen312/ArduinoBluetoothApp/blob/master/images/Screen%20Shot%202019-10-04%20at%208.01.41%20AM.png
 
 ## Documentation
 
+Worked on Graphics and GUI elements such as text and buttons. 
+Work on Exception handling
+
+To do: 
+Multidimensional Arrays to store data of the Diodes
+Overloading
+Enhanced for loop potentially
+Collections?
+Sorting (few examples in textbook)
