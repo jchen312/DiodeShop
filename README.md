@@ -7,14 +7,19 @@ This app will be created to help users purchase custom diodes. It will sell diod
 
 ## Documentation
 
+Year two concepts in use:
+
 Worked on Graphics and GUI elements such as text and buttons. 
+
 Work on Exception handling
+
+Overloading
+
+
 
 To do: 
 
 Multidimensional Arrays to store data of the Diodes
-
-Overloading
 
 Enhanced for loop potentially
 
