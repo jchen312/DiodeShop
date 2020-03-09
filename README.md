@@ -9,11 +9,13 @@ This app will be created to help users purchase custom diodes. It will sell diod
 
 Year two concepts in use:
 
-Worked on Graphics and GUI elements such as text and buttons. 
+- Worked on Graphics and GUI elements such as text and buttons. 
 
-Work on Exception handling
+- Work on Exception handling (try and catch blocks)
 
-Overloading
+- Overloading
+
+- Inheritance
 
 
 
@@ -21,8 +23,5 @@ To do:
 
 Multidimensional Arrays to store data of the Diodes
 
-Enhanced for loop potentially
+Enhanced for loop to count the elements in the arrays
 
-Collections?
-
-Sorting (few examples in textbook)
