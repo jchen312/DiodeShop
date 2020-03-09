@@ -4,6 +4,8 @@ This app will be created to help users purchase custom diodes. It will sell diod
 
 ## Pictures
 
+![alt text][class]
+[class]: https://github.com/jchen312/DiodeShop/blob/master/Images/class%20diagram.png
 
 ## Documentation
 
