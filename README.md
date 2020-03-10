@@ -12,7 +12,7 @@ This app will be created to help users purchase custom diodes. It will sell diod
 
 Year two concepts in use:
 
-- Worked on Graphics and GUI elements such as text and buttons. 
+- Worked on Graphics and GUI elements such as text, combo boxes, and buttons. 
 
 - Work on Exception handling (try and catch blocks)
 
@@ -22,6 +22,7 @@ Year two concepts in use:
 
 - Two-dimensional Array- need to finish implementing, but it will help display all of the data that will be collected. 
 
+- collections with the use of the ArrayList class
 
 
 Potential To Dos: 
