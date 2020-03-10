@@ -28,3 +28,5 @@ Potential To Dos:
 
 Enhanced for loop to count the elements in the arrays
 
+- overriding if i overwrite the ToString() method.
+
