@@ -20,11 +20,11 @@ Year two concepts in use:
 
 - Inheritance
 
+- Two-dimensional Array- need to finish implementing, but it will help display all of the data that will be collected. 
 
 
-To do: 
 
-Multidimensional Arrays to store data of the Diodes
+Potential To Dos: 
 
 Enhanced for loop to count the elements in the arrays
 
