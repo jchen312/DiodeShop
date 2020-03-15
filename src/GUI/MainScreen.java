@@ -8,6 +8,7 @@ package GUI;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Jeff Chen
@@ -19,6 +20,7 @@ public class MainScreen extends javax.swing.JFrame {
     ArrayList<normal> normals;
     ArrayList<schottkey> schottkeys;
     ArrayList<zener> zeners;
+    private DefaultTableModel dataModel;
     
     /**
      * Creates new form MainScreen
@@ -75,6 +77,7 @@ public class MainScreen extends javax.swing.JFrame {
         
         
         
+        
         String[][] data2 = new String[zeners.size()][6];
         
         for (int k = 0; k< zeners.size(); k++) 
@@ -121,6 +124,10 @@ public class MainScreen extends javax.swing.JFrame {
                 "Diode Type", "Mount Type", "Reverse Current", "Forward Voltage", "Forward Current", "LFSM", "Quantity"
             }
         ));
+        
+        normals.clear();
+        zeners.clear();
+        schottkeys.clear();
     }
 
     
@@ -252,6 +259,8 @@ public class MainScreen extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
@@ -316,6 +325,20 @@ public class MainScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Schottkey", jScrollPane4);
 
+        jButton2.setText("Update");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Billing");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -326,6 +349,10 @@ public class MainScreen extends javax.swing.JFrame {
                 .addContainerGap(164, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(122, 122, 122))
         );
@@ -335,7 +362,10 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -364,6 +394,107 @@ public class MainScreen extends javax.swing.JFrame {
         //open the NewDiode Jframe Screen
         new newDiode().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        //clear the contents of each table. 
+        jTable1.setModel(new DefaultTableModel());
+        jTable2.setModel(new DefaultTableModel());
+        jTable3.setModel(new DefaultTableModel());
+        
+       
+        populateArrayList();
+
+        
+        String[][] data11 = new String[normals.size()][6];
+        
+        for (int i = 0; i< normals.size() ; i++)
+        {
+            String type = normals.get(i).getType();
+            String mount = normals.get(i).getMount();
+            String rCurrent = Float.toString(normals.get(i).getReverseCurrent());
+            String fVoltage = Float.toString(normals.get(i).getForwardVoltage());
+            String fCurrent = Float.toString(normals.get(i).getForwardCurrent());
+            String quantity = Float.toString(normals.get(i).getQuanitity());
+            
+            data11[i][0] = type;
+            data11[i][1] = mount;
+            data11[i][2] = rCurrent;
+            data11[i][3] = fVoltage;
+            data11[i][4] = fCurrent;
+            data11[i][5] = quantity;
+            
+        }
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            data11,
+            new String [] {
+                "Diode Type", "Mount Type", "Reverse Current", "Forward Voltage", "Forward Current", "Quantity"
+            }
+        ));
+        
+        
+        
+        
+        
+        String[][] data2 = new String[zeners.size()][6];
+        
+        for (int k = 0; k< zeners.size(); k++) 
+        {
+            String type = zeners.get(k).getType();
+            String mount = zeners.get(k).getMount();
+            String zVoltage = Float.toString(zeners.get(k).getZenerVoltage());
+            String zCurrent = Float.toString(zeners.get(k).getZenerCurrent());
+            String zImpedance = Float.toString(zeners.get(k).getZenerImpedance());
+            String quantity = Float.toString(zeners.get(k).getQuanitity());
+            
+            data2[k][0] = type;
+            data2[k][1] = mount;
+            data2[k][2] = zVoltage;
+            data2[k][3] = zCurrent;
+            data2[k][4] = zImpedance;
+            data2[k][5] = quantity;
+        }
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            data2,
+            new String [] {
+                "Diode Type", "Mount Type", "Zener Voltage", "Zener Current" , "Zenner Impedance", "Quantity"
+            }
+        ));
+        
+        
+        
+        String[][] data3 = new String[schottkeys.size()][7];
+        
+        for (int i = 0; i < schottkeys.size(); i++)
+        {
+            data3[i][0] = schottkeys.get(i).getType();
+            data3[i][1] = schottkeys.get(i).getMount();
+            data3[i][2] = Float.toString(schottkeys.get(i).getReverseCurrent());
+            data3[i][3] = Float.toString(schottkeys.get(i).getForwardVoltage());
+            data3[i][4] = Float.toString(schottkeys.get(i).getForwardCurrent());
+            data3[i][5] = Float.toString(schottkeys.get(i).getLfsm());
+            data3[i][6] = Float.toString(schottkeys.get(i).getQuanitity());
+        }
+        
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            data3,
+            new String [] {
+                "Diode Type", "Mount Type", "Reverse Current", "Forward Voltage", "Forward Current", "LFSM", "Quantity"
+            }
+        ));
+        
+        
+        normals.clear();
+        zeners.clear();
+        schottkeys.clear();
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new userScreen().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,6 +533,8 @@ public class MainScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
