@@ -20,13 +20,6 @@ Year two concepts in use:
 - collections with the use of the ArrayList class
 
 
-Potential To Dos: 
-
-Enhanced for loop to count the elements in the arrays
-
-- overriding if i overwrite the ToString() method.
-
-- clean out all of the files when done
 
 
 ## Pictures
