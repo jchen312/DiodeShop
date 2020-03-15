@@ -71,4 +71,5 @@ This screen displays diode-type specific information for the user to fill out.
 There is also a screen for the user's information. The user can update their information at any time and click the "save" button to save everything. 
 
 ![alt text][billing]
+
 [billing]: https://github.com/jchen312/DiodeShop/blob/master/Images/Billing.png
