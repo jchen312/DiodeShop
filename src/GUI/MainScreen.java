@@ -6,6 +6,7 @@ import java.util.*;
 import java.io.*;
 import javax.swing.table.DefaultTableModel;
 /**
+ * This initializes all of the main GUI elements and displays previous diode orders.
  *
  * @author Jeff Chen
  */
@@ -24,7 +25,7 @@ public class MainScreen extends javax.swing.JFrame {
     public MainScreen() {
         initComponents();
         
-        //not sure if necessary
+        
         normals = new ArrayList<normal>();
         schottkeys = new ArrayList<schottkey>();
         zeners = new ArrayList<zener>();
@@ -118,6 +119,12 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     
+	/**
+	 * Reads the data files and populates each ArrayList with the values in the data files. 
+	 *
+	 *
+	 * @throws exception if there is no data file.
+	 */
     public void populateArrayList() 
     {
         
@@ -229,7 +236,9 @@ public class MainScreen extends javax.swing.JFrame {
         
     
    
-    
+    /**
+	 * Initializes all of the GUI components.
+	 */
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -372,12 +381,19 @@ public class MainScreen extends javax.swing.JFrame {
         pack();
     }
 
+	
+	/**
+	 * Upon user interaction, this will display a screen to create a new diode order.
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         
         //open the NewDiode Jframe Screen
         new newDiode().setVisible(true);
     }
 
+	/**
+	 * Upon user interaction, this updates each of the tables displaying the diode orders.
+	 */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         
         //clear the contents of each table. 
@@ -475,6 +491,10 @@ public class MainScreen extends javax.swing.JFrame {
         
     }
 
+	
+	/**
+	 * Upon user interaction, this will display a screen showing the user's information.
+	 */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         new userScreen().setVisible(true);
     }

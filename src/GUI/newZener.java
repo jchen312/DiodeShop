@@ -6,6 +6,7 @@ import java.util.*;
 import java.io.*;
 
 /**
+ * This initializes the GUI elements to create a new Zener type diode. It can create and write to a new data file
  *
  * @author Jeff Chen
  */
@@ -20,6 +21,10 @@ public class newZener extends javax.swing.JFrame {
     
     /**
      * Creates new form newZener
+	 *
+	 * @param quantity number of diodes
+	 * @param Type the type of diode
+	 * @param Mount the type of the mount
      */
     public newZener(float quantity, String Type, String Mount) {
         this.QUANTITY = quantity;
@@ -32,12 +37,19 @@ public class newZener extends javax.swing.JFrame {
         populateArrayList();
     }
 
+	/**
+     * Creates new form newZener
+	 */
      public newZener() {
         initComponents();
     }
      
      
-     
+     /**
+	 * This will read from a data file that has all of the previous orders for Zener diodes
+	 * 
+	 * @throws exception if there is no data file.
+	 */
      public void populateArrayList() {
         try
         {
@@ -73,7 +85,11 @@ public class newZener extends javax.swing.JFrame {
     }
         
         
-        
+     /**
+	 * This method saves the user input into a data file. 
+	 *
+	 * @throws exception if there is no data file.
+	 */
     public void saveZenersToFile()
     {
         try
@@ -101,7 +117,9 @@ public class newZener extends javax.swing.JFrame {
      
     
     
-    
+    /**
+	 * This intiializes all of the GUI components. 
+	 */
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -182,6 +200,11 @@ public class newZener extends javax.swing.JFrame {
         pack();
     }
 
+	
+	
+	/**
+	 * Checks if user input is valid and saves it to a data file. 
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         
         if (zVoltage.getText().isEmpty() || zCurrent.getText().isEmpty() || zImpedance.getText().isEmpty())

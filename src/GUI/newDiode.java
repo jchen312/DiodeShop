@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.util.*;
 
 /**
+ * This initializes the GUI for inputting data for a new Diode order.
  *
  * @author Jeff Chen
  */
@@ -23,7 +24,9 @@ public class newDiode extends javax.swing.JFrame {
 
     
     
-    
+    /**
+	 * Initializes all of the GUI components.
+	 */
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
@@ -141,6 +144,10 @@ public class newDiode extends javax.swing.JFrame {
         pack();
     }
 
+	
+	/**
+	 * Upon user interaction, this saves all the data the user has inputted and creates a new diode object. 
+	 */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         
         if (Quantity.getText().isEmpty())
@@ -187,15 +194,17 @@ public class newDiode extends javax.swing.JFrame {
         
     }
 
+	
+	/**
+	 * Interacting with this button will close the window.
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
         this.dispose();
     }
 
-    private void diodeTypeActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
+	
+	
     /**
      * @param args the command line arguments
      */

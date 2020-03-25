@@ -7,7 +7,8 @@ import java.io.*;
 
 
 /**
- *
+ * This initializes the GUI elements to create a new Normal type diode. It can create and write to a new data file
+ * 
  * @author Jeff Chen
  */
 public class newNormal extends javax.swing.JFrame {
@@ -20,6 +21,10 @@ public class newNormal extends javax.swing.JFrame {
     
     /**
      * Creates new form newNormal
+	 *
+	 * @param quantity number of diodes
+	 * @param Type the type of diode
+	 * @param Mount the type of the mount
      */
     public newNormal(float quantity, String Type, String Mount) {
         this.QUANTITY = quantity;
@@ -32,10 +37,20 @@ public class newNormal extends javax.swing.JFrame {
         populateArrayList();
     }
 
+	
+	/**
+     * Creates new form newNormal
+	 */
     public newNormal() {
         initComponents();
     }
     
+	
+	/**
+	 * This will read from a data file that has all of the previous orders for Normal diodes
+	 *
+	 * @throws exception if there is no data file.
+	 */
         public void populateArrayList() {
         try
         {
@@ -71,7 +86,11 @@ public class newNormal extends javax.swing.JFrame {
     }
         
         
-        
+    /**
+	 * This method saves the user input into a data file. 
+	 *
+	 * @throws exception if there is no data file.
+	 */
     public void saveNormalsToFile()
     {
         try
@@ -98,7 +117,9 @@ public class newNormal extends javax.swing.JFrame {
     }
             
         
-    
+    /**
+	 * This intiializes all of the GUI components. 
+	 */
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -194,10 +215,10 @@ public class newNormal extends javax.swing.JFrame {
         pack();
     }
 
-    private void rCurrentActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
+    
+	/**
+	 * Checks if user input is valid and saves it to a data file. 
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
        
         if (rCurrent.getText().isEmpty() || fVoltage.getText().isEmpty() || fCurrentDrop.getText().isEmpty())

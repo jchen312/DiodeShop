@@ -8,6 +8,7 @@ import java.io.*;
 
 
 /**
+ * This initializes the GUI elements to create a new Normal type diode. It can create and write to a new data file
  *
  * @author Jeff Chen
  */
@@ -38,6 +39,12 @@ public class userScreen extends javax.swing.JFrame {
         
     }
     
+	
+	/**
+	 * This will read from a data file that has all of the previous orders for the user
+	 *
+	 * @throws exception if there is no data file.
+	 */
     public void populateArrayList() {
         try
         {
@@ -72,6 +79,13 @@ public class userScreen extends javax.swing.JFrame {
         }
     }
     
+	
+	
+	/**
+	 * This method saves the user input into a data file. 
+	 *
+	 * @throws exception if there is no data file.
+	 */
     public void saveUsersToFile()
     {
         try
@@ -97,7 +111,9 @@ public class userScreen extends javax.swing.JFrame {
         }
     }
 
-    
+    /**
+	 * This intiializes all of the GUI components. 
+	 */
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
@@ -239,10 +255,10 @@ public class userScreen extends javax.swing.JFrame {
         pack();
     }
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
-
+   
+	/**
+	 * Checks if user input is valid and saves it to a data file. 
+	 */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         
         
